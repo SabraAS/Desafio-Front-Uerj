@@ -1,173 +1,35 @@
 import '@/styles/App.scss';
 import './Home.scss';
 
-import pokemon from '@/assets/cover-pokemon.png';
 import CartSidebar from '@/components/CartSidebar';
 import PokemonCard from '@/components/PokemonCard';
-const pokemons = [
-  {
-    abilities: [{ name: 'Raio' }, { name: 'Choque' }],
-    image: pokemon,
-    name: 'Pikachu',
-    types: [{ name: 'Eletrico' }, { name: 'Fogo' }],
-  },
-  {
-    abilities: [{ name: 'Raio' }, { name: 'Choque' }],
-    image: pokemon,
-    name: 'Pikachu',
-    types: [{ name: 'Eletrico' }, { name: 'Fogo' }],
-  },
-  {
-    abilities: [{ name: 'Raio' }, { name: 'Choque' }],
-    image: pokemon,
-    name: 'Pikachu',
-    types: [{ name: 'Eletrico' }, { name: 'Fogo' }],
-  },
-  {
-    abilities: [{ name: 'Raio' }, { name: 'Choque' }],
-    image: pokemon,
-    name: 'Pikachu',
-    types: [{ name: 'Eletrico' }, { name: 'Fogo' }],
-  },
-  {
-    abilities: [{ name: 'Raio' }, { name: 'Choque' }],
-    image: pokemon,
-    name: 'Pikachu',
-    types: [{ name: 'Eletrico' }, { name: 'Fogo' }],
-  },
-  {
-    abilities: [{ name: 'Raio' }, { name: 'Choque' }],
-    image: pokemon,
-    name: 'Pikachu',
-    types: [{ name: 'Eletrico' }, { name: 'Fogo' }],
-  },
-  {
-    abilities: [{ name: 'Raio' }, { name: 'Choque' }],
-    image: pokemon,
-    name: 'Pikachu',
-    types: [{ name: 'Eletrico' }, { name: 'Fogo' }],
-  },
-  {
-    abilities: [{ name: 'Raio' }, { name: 'Choque' }],
-    image: pokemon,
-    name: 'Pikachu',
-    types: [{ name: 'Eletrico' }, { name: 'Fogo' }],
-  },
-  {
-    abilities: [{ name: 'Raio' }, { name: 'Choque' }],
-    image: pokemon,
-    name: 'Pikachu',
-    types: [{ name: 'Eletrico' }, { name: 'Fogo' }],
-  },
-  {
-    abilities: [{ name: 'Raio' }, { name: 'Choque' }],
-    image: pokemon,
-    name: 'Pikachu',
-    types: [{ name: 'Eletrico' }, { name: 'Fogo' }],
-  },
-  {
-    abilities: [{ name: 'Raio' }, { name: 'Choque' }],
-    image: pokemon,
-    name: 'Pikachu',
-    types: [{ name: 'Eletrico' }, { name: 'Fogo' }],
-  },
-  {
-    abilities: [{ name: 'Raio' }, { name: 'Choque' }],
-    image: pokemon,
-    name: 'Pikachu',
-    types: [{ name: 'Eletrico' }, { name: 'Fogo' }],
-  },
-  {
-    abilities: [{ name: 'Raio' }, { name: 'Choque' }],
-    image: pokemon,
-    name: 'Pikachu',
-    types: [{ name: 'Eletrico' }, { name: 'Fogo' }],
-  },
-  {
-    abilities: [{ name: 'Raio' }, { name: 'Choque' }],
-    image: pokemon,
-    name: 'Pikachu',
-    types: [{ name: 'Eletrico' }, { name: 'Fogo' }],
-  },
-  {
-    abilities: [{ name: 'Raio' }, { name: 'Choque' }],
-    image: pokemon,
-    name: 'Pikachu',
-    types: [{ name: 'Eletrico' }, { name: 'Fogo' }],
-  },
-  {
-    abilities: [{ name: 'Raio' }, { name: 'Choque' }],
-    image: pokemon,
-    name: 'Pikachu',
-    types: [{ name: 'Eletrico' }, { name: 'Fogo' }],
-  },
-  {
-    abilities: [{ name: 'Raio' }, { name: 'Choque' }],
-    image: pokemon,
-    name: 'Pikachu',
-    types: [{ name: 'Eletrico' }, { name: 'Fogo' }],
-  },
-  {
-    abilities: [{ name: 'Raio' }, { name: 'Choque' }],
-    image: pokemon,
-    name: 'Pikachu',
-    types: [{ name: 'Eletrico' }, { name: 'Fogo' }],
-  },
-  {
-    abilities: [{ name: 'Raio' }, { name: 'Choque' }],
-    image: pokemon,
-    name: 'Pikachu',
-    types: [{ name: 'Eletrico' }, { name: 'Fogo' }],
-  },
-  {
-    abilities: [{ name: 'Raio' }, { name: 'Choque' }],
-    image: pokemon,
-    name: 'Pikachu',
-    types: [{ name: 'Eletrico' }, { name: 'Fogo' }],
-  },
-  {
-    abilities: [{ name: 'Raio' }, { name: 'Choque' }],
-    image: pokemon,
-    name: 'Pikachu',
-    types: [{ name: 'Eletrico' }, { name: 'Fogo' }],
-  },
-  {
-    abilities: [{ name: 'Raio' }, { name: 'Choque' }],
-    image: pokemon,
-    name: 'Pikachu',
-    types: [{ name: 'Eletrico' }, { name: 'Fogo' }],
-  },
-  {
-    abilities: [{ name: 'Raio' }, { name: 'Choque' }],
-    image: pokemon,
-    name: 'Pikachu',
-    types: [{ name: 'Eletrico' }, { name: 'Fogo' }],
-  },
-  {
-    abilities: [{ name: 'Raio' }, { name: 'Choque' }],
-    image: pokemon,
-    name: 'Pikachu',
-    types: [{ name: 'Eletrico' }, { name: 'Fogo' }],
-  },
-];
+import { usePokemons } from '@/queries/pokemon';
+import { usePokemonStore } from '@/store/pokemon';
 
 function App() {
+  const { data: pokemons, isLoading } = usePokemons(40);
+  const { pokemons: pokemonsStore, addPokemon } = usePokemonStore();
+
   return (
     <div className="home">
       <h1 className="home__title">Pokémons</h1>
       <div className="home__list-grid">
-        {pokemons.map((pokemon) => (
-          <PokemonCard
-            abilities={pokemon.abilities}
-            image={pokemon.image}
-            key={pokemon.name}
-            name={pokemon.name}
-            onClick={() => {
-              console.log('teste');
-            }}
-            types={pokemon.types}
-          />
-        ))}
+        {pokemons &&
+          pokemons?.map((pokemon) => (
+            <PokemonCard
+              abilities={pokemon.abilities}
+              characteristic={pokemon.characteristic}
+              disabled={pokemonsStore.find((p) => p.id === pokemon.id)}
+              image={pokemon.image}
+              key={pokemon.id}
+              name={pokemon.name}
+              onClick={() => {
+                console.log('teste');
+                addPokemon(pokemon);
+              }}
+              types={pokemon.types}
+            />
+          ))}
       </div>
       <CartSidebar />
     </div>

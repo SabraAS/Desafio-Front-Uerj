@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom/client';
 import AppRoutes from './router';
 
 import './styles/index.scss';
+import './styles/App.scss';
 
 const queryClient = new QueryClient();
 
