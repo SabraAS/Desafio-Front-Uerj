@@ -2,7 +2,7 @@ import path from 'path';
 
 import react from '@vitejs/plugin-react';
 import ViteRestart from 'vite-plugin-restart';
-import { defineConfig, coverageConfigDefaults } from 'vitest/config';
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   build: {
@@ -15,12 +15,16 @@ export default defineConfig({
     },
   },
   test: {
-    setupFiles: ['./.config/vitest.setup.js'],
     globals: true,
     environment: 'jsdom',
+    setupFiles: ['./.config/vitest.setup.js'],
+    css: true,
+    watch: {
+      ignored: ['**/node_modules/**', '**/dist/**', '**/.git/**'],
+      include: ['src/**/*.{test,spec}.{js,jsx,ts,tsx}'],
+    },
     coverage: {
-      reporter: ['text', 'lcov', 'html'],
-      exclude: [...coverageConfigDefaults.exclude],
+      reporter: ['text', 'json', 'html'],
     },
   },
 });
