@@ -12,7 +12,6 @@ const CartSidebar = () => {
   const clearTeam = usePokemonStore((state) => state.clearTeam);
 
   const handleConfirm = () => {
-    console.log('handleConfirm');
     setShowConfirmation(true);
   };
 
@@ -27,34 +26,38 @@ const CartSidebar = () => {
         <h2 className="cart-sidebar__title">Sua equipe</h2>
 
         <div className="cart-sidebar__items">
-          {pokemons.map((item) => (
-            <div className="cart-sidebar__item" key={item.id}>
-              <div className="cart-sidebar__item-info">
-                <div className="cart-sidebar__item-header">
-                  <p className="cart-sidebar__item-x">x</p>
-                  <p className="cart-sidebar__item-name">{item.name}</p>
-                  <button
-                    className="cart-sidebar__remove-button"
-                    onClick={() => removePokemon(item.id)}
-                  >
-                    ×
-                  </button>
-                </div>
-                <div className="cart-sidebar__item-characteristic">
-                  <span>{item.characteristic}</span>
+          {pokemons && pokemons.length > 0 ? (
+            pokemons.map((item) => (
+              <div className="cart-sidebar__item" key={item.id}>
+                <div className="cart-sidebar__item-info">
+                  <div className="cart-sidebar__item-header">
+                    <p className="cart-sidebar__item-x">x</p>
+                    <p className="cart-sidebar__item-name">{item.name}</p>
+                    <button
+                      className="cart-sidebar__remove-button"
+                      data-testid="remove-pokemon-button"
+                      onClick={() => removePokemon(item.id)}
+                    >
+                      ×
+                    </button>
+                  </div>
+                  <div className="cart-sidebar__item-characteristic">
+                    <span>{item.characteristic}</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-
-          {pokemons.length === 0 && (
-            <p className="cart-sidebar__empty-message"></p>
+            ))
+          ) : (
+            <p className="cart-sidebar__empty-message">
+              Nenhum Pokémon selecionado
+            </p>
           )}
         </div>
 
         <div className="cart-sidebar__footer">
           <button
             className="cart-sidebar__checkout-button"
+            data-testid="confirm-team-button"
             disabled={pokemons.length === 0}
             onClick={handleConfirm}
           >

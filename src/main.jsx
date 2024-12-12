@@ -1,11 +1,11 @@
-import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import AppRoutes from './router';
 
-import './styles/index.scss';
 import './styles/App.scss';
+import './styles/index.scss';
 
 const queryClient = new QueryClient();
 

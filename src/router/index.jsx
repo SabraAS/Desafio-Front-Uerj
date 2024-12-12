@@ -1,8 +1,8 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Home from '@/app/Home';
 
-const routeConfig = [
+export const routeConfig = [
   {
     path: '/',
     element: <Home />,

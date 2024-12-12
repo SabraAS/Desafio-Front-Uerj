@@ -5,7 +5,11 @@ const ConfirmationModal = ({ items, onClose, onStartNew }) => {
   return (
     <div className="modal-overlay">
       <div className="confirmation-modal">
-        <button className="confirmation-modal__close-button" onClick={onClose}>
+        <button
+          className="confirmation-modal__close-button"
+          data-testid="modal-close-button"
+          onClick={onClose}
+        >
           ×
         </button>
 
@@ -40,7 +44,11 @@ const ConfirmationModal = ({ items, onClose, onStartNew }) => {
           </div>
         </div>
 
-        <button className="confirmation-modal__button" onClick={onStartNew}>
+        <button
+          className="confirmation-modal__button"
+          data-testid="start-new-team-button"
+          onClick={onStartNew}
+        >
           Começar nova equipe
         </button>
       </div>

@@ -7,7 +7,7 @@ import { usePokemons } from '@/queries/pokemon';
 import { usePokemonStore } from '@/store/pokemon';
 
 function App() {
-  const { data: pokemons, isLoading } = usePokemons(40);
+  const { data: pokemons } = usePokemons(40);
   const { pokemons: pokemonsStore, addPokemon } = usePokemonStore();
 
   return (
@@ -19,12 +19,11 @@ function App() {
             <PokemonCard
               abilities={pokemon.abilities}
               characteristic={pokemon.characteristic}
-              disabled={pokemonsStore.find((p) => p.id === pokemon.id)}
+              disabled={Boolean(pokemonsStore.find((p) => p.id === pokemon.id))}
               image={pokemon.image}
               key={pokemon.id}
               name={pokemon.name}
               onClick={() => {
-                console.log('teste');
                 addPokemon(pokemon);
               }}
               types={pokemon.types}
